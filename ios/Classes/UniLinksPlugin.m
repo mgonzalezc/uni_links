@@ -68,13 +68,7 @@ static id _instance;
 - (BOOL)application:(UIApplication *)application
     continueUserActivity:(NSUserActivity *)userActivity
       restorationHandler:(void (^)(NSArray *_Nullable))restorationHandler {
-  if ([userActivity.activityType isEqualToString:NSUserActivityTypeBrowsingWeb]) {
-    self.latestLink = [userActivity.webpageURL absoluteString];
-    if (!_eventSink) {
-      self.initialLink = self.latestLink;
-    }
-    return YES;
-  }
+  //Rely contineUserActivity to Firebase Dynamic Links plugin
   return NO;
 }
 
