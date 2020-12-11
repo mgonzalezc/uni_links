@@ -62,13 +62,14 @@ static id _instance;
   if (!_eventSink) {
     self.initialLink = self.latestLink;
   }
-  return YES;
+  //Entrust openURL to Firebase Dynamic Links plugin
+  return NO;
 }
 
 - (BOOL)application:(UIApplication *)application
     continueUserActivity:(NSUserActivity *)userActivity
       restorationHandler:(void (^)(NSArray *_Nullable))restorationHandler {
-  //Rely contineUserActivity to Firebase Dynamic Links plugin
+  //Entrust contineUserActivity to Firebase Dynamic Links plugin
   return NO;
 }
 
